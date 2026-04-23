@@ -1,0 +1,18 @@
+{
+  "plugin": "hr-payroll-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "traceability-core",
+    "accounting-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.hr",
+    "events.publish.hr"
+  ]
+}

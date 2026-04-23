@@ -1,0 +1,9 @@
+{
+  "workspace": "hr",
+  "route": "/admin/business/hr",
+  "pageTitle": "HR & Payroll Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

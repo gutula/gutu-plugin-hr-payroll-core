@@ -1,0 +1,27 @@
+{
+  "packageId": "hr-payroll-core",
+  "packName": "hr-payroll-core-starter-pack",
+  "expectedActions": [
+    "hr.employees.onboard",
+    "hr.payroll.process",
+    "hr.leave.approve"
+  ],
+  "expectedResources": [
+    "hr.employees",
+    "hr.payroll-runs",
+    "hr.leave-state"
+  ],
+  "expectedReports": [
+    "Payroll Register",
+    "Salary Register",
+    "Leave Ledger",
+    "Expense Claim Summary",
+    "Attendance Summary"
+  ],
+  "expectedExceptionQueues": [
+    "payroll-lock-review",
+    "retro-pay-adjustments",
+    "leave-balance-corrections",
+    "payout-failure-review"
+  ]
+}

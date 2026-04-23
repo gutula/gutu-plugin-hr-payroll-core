@@ -1,0 +1,9 @@
+{
+  "workflowId": "hr-payroll-lifecycle",
+  "actors": [
+    "hr-operator",
+    "approver",
+    "payroll-lead"
+  ],
+  "description": "Onboard, approve, process, correct, and close HR and payroll work."
+}

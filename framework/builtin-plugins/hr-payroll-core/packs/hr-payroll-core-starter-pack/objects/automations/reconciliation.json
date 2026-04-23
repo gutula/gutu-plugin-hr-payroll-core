@@ -1,0 +1,11 @@
+{
+  "automationId": "hr-payroll-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "hr.reconciliation.run",
+  "queues": [
+    "payroll-lock-review",
+    "retro-pay-adjustments",
+    "leave-balance-corrections",
+    "payout-failure-review"
+  ]
+}
