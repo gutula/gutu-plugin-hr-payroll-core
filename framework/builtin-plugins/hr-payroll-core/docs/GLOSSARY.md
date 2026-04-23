@@ -9,6 +9,10 @@
 | hr.employees.onboard | Onboard Employee |
 | hr.payroll.process | Process Payroll Run |
 | hr.leave.approve | Approve Leave |
+| hr.employees.hold | Place Record On Hold |
+| hr.employees.release | Release Record Hold |
+| hr.employees.amend | Amend Record |
+| hr.employees.reverse | Reverse Record |
 | hr.projections.refresh | Job definition queued on `hr-projections`. |
 | hr.reconciliation.run | Job definition queued on `hr-reconciliation`. |
 | hr-payroll-lifecycle | Onboard, approve, process, correct, and close HR and payroll work. |

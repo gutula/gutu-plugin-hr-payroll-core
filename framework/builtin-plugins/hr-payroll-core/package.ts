@@ -85,7 +85,11 @@ export default definePackage({
   "publicCommands": [
     "hr.employees.onboard",
     "hr.payroll.process",
-    "hr.leave.approve"
+    "hr.leave.approve",
+    "hr.employees.hold",
+    "hr.employees.release",
+    "hr.employees.amend",
+    "hr.employees.reverse"
   ],
   "publicQueries": [
     "hr.workforce-summary",

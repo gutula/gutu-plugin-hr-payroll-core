@@ -5,6 +5,10 @@
 - `hr.employees.onboard`: Onboard Employee
 - `hr.payroll.process`: Process Payroll Run
 - `hr.leave.approve`: Approve Leave
+- `hr.employees.hold`: Place Record On Hold
+- `hr.employees.release`: Release Record Hold
+- `hr.employees.amend`: Amend Record
+- `hr.employees.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -71,6 +75,106 @@ Forbidden shortcuts:
 Approve Leave
 
 Permission: `hr.leave.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `hr.employees.hold`
+
+Place Record On Hold
+
+Permission: `hr.employees.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `hr.employees.release`
+
+Release Record Hold
+
+Permission: `hr.employees.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `hr.employees.amend`
+
+Amend Record
+
+Permission: `hr.employees.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `hr.employees.reverse`
+
+Reverse Record
+
+Permission: `hr.employees.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

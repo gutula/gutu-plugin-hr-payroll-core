@@ -71,6 +71,10 @@ Owns workforce, leave, and payroll state so people and compensation truth remain
 | Action | `hr.employees.onboard` | Permission: `hr.employees.write` | Onboard Employee<br>Idempotent<br>Audited |
 | Action | `hr.payroll.process` | Permission: `hr.payroll.write` | Process Payroll Run<br>Non-idempotent<br>Audited |
 | Action | `hr.leave.approve` | Permission: `hr.leave.write` | Approve Leave<br>Non-idempotent<br>Audited |
+| Action | `hr.employees.hold` | Permission: `hr.employees.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `hr.employees.release` | Permission: `hr.employees.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `hr.employees.amend` | Permission: `hr.employees.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `hr.employees.reverse` | Permission: `hr.employees.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `hr.employees` | Portal disabled | Employee core and employment lifecycle records.<br>Purpose: Own workforce truth separately from projects, assets, or accounting.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `hr.payroll-runs` | Portal disabled | Payroll calendars, run posture, and rerun-safe payroll records.<br>Purpose: Track payroll truth and correction state before financial posting occurs downstream.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `hr.leave-state` | Portal disabled | Leave balances, approval posture, and exception records.<br>Purpose: Expose attendance and leave state explicitly for workforce operations.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/hr-payroll-core";
+import { manifest, onboardEmployeeAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/hr-payroll-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  onboardEmployeeAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/hr-payroll-core";
+import { manifest, onboardEmployeeAction } from "@plugins/hr-payroll-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", onboardEmployeeAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve`.
+- Exports 7 governed actions: `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve`, `hr.employees.hold`, `hr.employees.release`, `hr.employees.amend`, `hr.employees.reverse`.
 - Owns 3 resource contracts: `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

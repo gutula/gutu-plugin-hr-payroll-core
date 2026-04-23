@@ -26,7 +26,7 @@ Employee lifecycle, attendance posture, leave and claims, payroll processing, an
 
 Owns workforce, leave, and payroll state so people and compensation truth remain governed before downstream finance or delivery consumption.
 
-- Exports 3 governed actions: `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve`.
+- Exports 7 governed actions: `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve`, `hr.employees.hold`, `hr.employees.release`, `hr.employees.amend`, `hr.employees.reverse`.
 - Owns 3 resource contracts: `hr.employees`, `hr.payroll-runs`, `hr.leave-state`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve` |
+| Actions | 7 | `hr.employees.onboard`, `hr.payroll.process`, `hr.leave.approve`, `hr.employees.hold`, `hr.employees.release`, `hr.employees.amend`, `hr.employees.reverse` |
 | Resources | 3 | `hr.employees`, `hr.payroll-runs`, `hr.leave-state` |
 | Jobs | 2 | `hr.projections.refresh`, `hr.reconciliation.run` |
 | Workflows | 1 | `hr-payroll-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/hr-payroll-core";
+import { manifest, onboardEmployeeAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/hr-payroll-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(onboardEmployeeAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

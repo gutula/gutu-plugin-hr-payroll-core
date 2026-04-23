@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "hr.employees.onboard",
       "hr.payroll.process",
-      "hr.leave.approve"
+      "hr.leave.approve",
+      "hr.employees.hold",
+      "hr.employees.release",
+      "hr.employees.amend",
+      "hr.employees.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -26,7 +30,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "hr.employees.onboard",
       "hr.payroll.process",
-      "hr.leave.approve"
+      "hr.leave.approve",
+      "hr.employees.hold",
+      "hr.employees.release",
+      "hr.employees.amend",
+      "hr.employees.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -46,7 +54,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "hr.employees.onboard",
       "hr.payroll.process",
-      "hr.leave.approve"
+      "hr.leave.approve",
+      "hr.employees.hold",
+      "hr.employees.release",
+      "hr.employees.amend",
+      "hr.employees.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -66,7 +78,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "hr.employees.onboard",
       "hr.payroll.process",
-      "hr.leave.approve"
+      "hr.leave.approve",
+      "hr.employees.hold",
+      "hr.employees.release",
+      "hr.employees.amend",
+      "hr.employees.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -86,7 +102,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "hr.employees.onboard",
       "hr.payroll.process",
-      "hr.leave.approve"
+      "hr.leave.approve",
+      "hr.employees.hold",
+      "hr.employees.release",
+      "hr.employees.amend",
+      "hr.employees.reverse"
     ],
     "downstreamTargets": {
       "create": [],
