@@ -60,9 +60,59 @@ export default definePackage({
       "packageId": "accounting-core",
       "class": "required",
       "rationale": "Required for HR & Payroll Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "optional",
+      "rationale": "Recommended with HR & Payroll Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "projects-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves HR & Payroll Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves HR & Payroll Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "assets-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves HR & Payroll Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves HR & Payroll Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "business-portals-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "projects-core",
+    "manufacturing-core",
+    "assets-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "localization-india",
+    "localization-united-states",
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-healthcare",
+    "sector-manufacturing",
+    "sector-professional-services"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Payroll should be paired with Accounting for real deployments; portals are strongly recommended for ESS or MSS usage."
+  ],
+  "optionalWith": [
+    "business-portals-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "hr.employees",

@@ -54,6 +54,11 @@ Owns workforce, leave, and payroll state so people and compensation truth remain
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | None |
+| Integration Only | None |
+| Suggested Packs | None |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.hr`, `events.publish.hr` |
 | Provides Capabilities | `hr.employees`, `hr.payroll-runs`, `hr.leave-state` |
 | Owns Data | `hr.employees`, `hr.payroll-runs`, `hr.leave-state`, `hr.claims` |

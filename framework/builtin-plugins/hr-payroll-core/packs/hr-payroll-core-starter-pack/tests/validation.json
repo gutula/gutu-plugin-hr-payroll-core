@@ -1,6 +1,34 @@
 {
   "packageId": "hr-payroll-core",
   "packName": "hr-payroll-core-starter-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "traceability-core",
+    "accounting-core"
+  ],
+  "recommendedPlugins": [
+    "business-portals-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "projects-core",
+    "manufacturing-core",
+    "assets-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "localization-india",
+    "localization-united-states",
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-healthcare",
+    "sector-manufacturing",
+    "sector-professional-services"
+  ],
   "expectedActions": [
     "hr.employees.onboard",
     "hr.payroll.process",
