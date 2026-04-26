@@ -61,10 +61,10 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `hr-payroll-core` |
 | Repo | [gutu-plugin-hr-payroll-core](https://github.com/gutula/gutu-plugin-hr-payroll-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Recommended Plugins | `business-portals-core` |
+| Capability Enhancing | `projects-core`, `manufacturing-core`, `assets-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
+| Suggested Packs | `localization-india`, `localization-united-states`, `sector-education`, `sector-epc-professional-delivery`, `sector-healthcare`, `sector-manufacturing`, `sector-professional-services` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.hr`, `events.publish.hr` |
 | Provided Capabilities | `hr.employees`, `hr.payroll-runs`, `hr.leave-state` |
@@ -75,12 +75,12 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 ## Installation Guidance
 
 - Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core`
-- Recommended plugins: none
-- Capability-enhancing plugins: none
+- Recommended plugins: `business-portals-core`
+- Capability-enhancing plugins: `projects-core`, `manufacturing-core`, `assets-core`, `analytics-bi-core`
 - Integration-only plugins: none
-- Suggested packs: none
+- Suggested packs: `localization-india`, `localization-united-states`, `sector-education`, `sector-epc-professional-delivery`, `sector-healthcare`, `sector-manufacturing`, `sector-professional-services`
 - Standalone supported: yes
-
+- Payroll should be paired with Accounting for real deployments; portals are strongly recommended for ESS or MSS usage.
 
 ## Capability Matrix
 

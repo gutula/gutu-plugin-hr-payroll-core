@@ -54,10 +54,10 @@ Owns workforce, leave, and payroll state so people and compensation truth remain
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Recommended Plugins | `business-portals-core` |
+| Capability Enhancing | `projects-core`, `manufacturing-core`, `assets-core`, `analytics-bi-core` |
 | Integration Only | None |
-| Suggested Packs | None |
+| Suggested Packs | `localization-india`, `localization-united-states`, `sector-education`, `sector-epc-professional-delivery`, `sector-healthcare`, `sector-manufacturing`, `sector-professional-services` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.hr`, `events.publish.hr` |
 | Provides Capabilities | `hr.employees`, `hr.payroll-runs`, `hr.leave-state` |
